@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          test - how8570&#39;s Blog 靜凡的小天地
+          多元一次方程式 - how8570&#39;s Blog 靜凡的小天地
         
     </title>
 
-    <link rel="canonical" href="http://how8570.github.io/2018/04/26/test/">
+    <link rel="canonical" href="http://how8570.github.io/2018/05/01/多元一次方程式/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('undefined')
+            background-image: url('null')
             /*post*/
         
     }
@@ -90,12 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/tags/#Divide &amp; Conconer" title="Divide &amp; Conconer">Divide &amp; Conconer</a>
+                            
                         </div>
-                        <h1>test</h1>
-                        <h2 class="subheading"></h2>
+                        <h1>多元一次方程式</h1>
+                        <h2 class="subheading">類硬幣問題</h2>
                         <span class="meta">
                             Posted by how8570 on
-                            2018-04-26
+                            2018-05-01
                         </span>
                     </div>
                 
@@ -212,8 +214,17 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>有沒有人可以推薦個頁面上的背景給我呢?<br>
-我想換張圖</p>
+                <p>學校期中出了一題相對較難的題目<br>
+當時用 Brute force 水過 AC<br>
+後來覺得這樣不行 於是重寫一次</p>
+<h2><span id="題目大意">題目大意</span></h2>
+<p>給一多項式 如</p>
+<h2><span id="input">Input</span></h2>
+<h2><span id="output">Output</span></h2>
+<h2><span id="解題想法">解題想法</span></h2>
+<p>##code</p>
+<p>這份 code 使用 <strong>c++</strong> 完成</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">#define endl <span class="string">'\n'</span></span><br><span class="line">#define Bound <span class="number">5</span>+<span class="number">50</span>  <span class="comment">//variable count</span></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> coef[Bound];  <span class="comment">//coefficient</span></span><br><span class="line"><span class="built_in">int</span> n;</span><br><span class="line"><span class="built_in">int</span> sum, lowB;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> slove(<span class="built_in">int</span> sum)&#123;</span><br><span class="line">    <span class="comment">//cout &lt;&lt; "call slove(" &lt;&lt; sum &lt;&lt; ')' &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">int</span> total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        total += slove(sum-coef[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> main() &#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n)&#123;</span><br><span class="line">        lowB=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span> ; i &lt; n; i++ )&#123;</span><br><span class="line">            cin &gt;&gt; coef[i];</span><br><span class="line">            lowB += coef[i];</span><br><span class="line">        &#125;</span><br><span class="line">        sort(coef, coef+n);</span><br><span class="line">        cin &gt;&gt; sum;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; lowB &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">        cout &lt;&lt; slove(sum-lowB) &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="markdown">/<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="emphasis">***</span>*</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">* </span>Problem   : 多元一次方程式                     *</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">* </span>Version   : 2018/05/1 02:11                    *</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">* </span>Auother   : how8570 at how8570.github.io       *</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="emphasis">***</span>*/</span></span></span><br></pre></td></tr></table></figure>
 
                 
 
@@ -221,13 +232,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/05/01/多元一次方程式/" data-toggle="tooltip" data-placement="top" title="多元一次方程式">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/03/18/hexo-theme-beantech/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme BeanTech">Next Post &rarr;</a>
+                            <a href="/2018/04/26/test/" data-toggle="tooltip" data-placement="top" title="test">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -252,6 +259,17 @@
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">題目大意</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Input</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Output</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">解題想法</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
                 
             <!-- Sidebar Container -->
             <div class="
@@ -266,6 +284,8 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#Divide &amp; Conconer" title="Divide &amp; Conconer">Divide &amp; Conconer</a>
+                        
                     </div>
                 </section>
                 
@@ -299,8 +319,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://how8570.github.io/2018/04/26/test/";
-    var disqus_url = "http://how8570.github.io/2018/04/26/test/";
+    var disqus_identifier = "http://how8570.github.io/2018/05/01/多元一次方程式/";
+    var disqus_url = "http://how8570.github.io/2018/05/01/多元一次方程式/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

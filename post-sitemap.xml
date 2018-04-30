@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://how8570.github.io/2018/05/01/%E5%A4%9A%E5%85%83%E4%B8%80%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/</loc>
+        <lastmod>2018-04-30T18:16:31.991Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://how8570.github.io/2018/04/26/test/</loc>
-        <lastmod>2018-04-26T19:33:30.956Z</lastmod>
+        <lastmod>2018-04-26T19:50:02.079Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,14 +25,6 @@
     <url>
         <loc>http://how8570.github.io/2017/03/18/hexo-theme-beantech/</loc>
         <lastmod>2018-04-26T16:06:42.389Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://how8570.github.io/2018/04/26/hello-world/</loc>
-        <lastmod>2018-04-26T14:00:40.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
