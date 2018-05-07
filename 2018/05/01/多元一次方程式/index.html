@@ -146,13 +146,6 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -161,6 +154,13 @@
                         
                         <li>
                             <a href="/about/">About me/this site</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -225,17 +225,71 @@
 12a+18b+20c = 170<br>
 求所有滿足上式的(a,b,c)正整數解的係數和<br>
 a,b,c  屬於正整數</p>
+<p>其所有正整數解如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">a</th>
+<th style="text-align:right">b</th>
+<th style="text-align:right">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">7</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">7</td>
+</tr>
+</tbody>
+</table>
+<p>其總和為 <em>76</em></p>
 <h2><span id="input">Input</span></h2>
 <p>一行一組<br>
 第一個<strong>n</strong>代表，有一 <strong>n</strong> 元一次多項式<br>
 接下來 <strong>a1,a2,…,an</strong> 為多項式係數<br>
 最後接著 等式的和  <strong>S</strong></p>
 <p>範例輸入：<br>
-3 12 18 20 170</p>
+3 12 18 20 170<br>
+4 10 2 8 4 48<br>
+2 4 2 52<br>
+2 6 2 30</p>
 <h2><span id="output">Output</span></h2>
 <p>所有正整數解係數和</p>
 <p>範例輸出：<br>
-76</p>
+76<br>
+254<br>
+234<br>
+40</p>
 <h2><span id="解題思路">解題思路</span></h2>
 <p>硬幣問題</p>
 <p>因要考慮所有正整數解<br>
@@ -249,12 +303,16 @@ a,b,c  屬於正整數</p>
 <li><strong>s</strong> 要湊到的金額</li>
 </ul>
 <p>於是可寫成下方遞迴式：</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="built_in">n</span>,s) =</span><br><span class="line">  <span class="number">0</span> (<span class="built_in">n</span>&lt;<span class="number">0</span>)   </span><br><span class="line">        總和超過了，不合，往下走也不會有解</span><br><span class="line">  <span class="number">1</span> (<span class="built_in">n</span>=<span class="number">0</span>)</span><br><span class="line">        正好找到解</span><br><span class="line">  f(<span class="built_in">n</span>, s-coef[<span class="built_in">n</span>]) + f(<span class="built_in">n</span>-<span class="number">1</span>, s) </span><br><span class="line">        最後一次剛好使用第 <span class="built_in">n</span> 種硬幣湊成 s 的解 +</span><br><span class="line">            只有 <span class="built_in">n</span>-<span class="number">1</span> 種硬幣湊成 s 的解</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="built_in">n</span>,s) =</span><br><span class="line">  <span class="number">0</span> (<span class="built_in">n</span>&lt;<span class="number">0</span>)   </span><br><span class="line">        總和超過了，不合，往下走也不會有解</span><br><span class="line">  <span class="number">1</span> (<span class="built_in">n</span>=<span class="number">0</span>)</span><br><span class="line">        正好找到解</span><br><span class="line">  f(<span class="built_in">n</span>, s-coef[<span class="built_in">n</span>]) + f(<span class="built_in">n</span>-<span class="number">1</span>, s) </span><br><span class="line">        最後一次剛好使用第 <span class="built_in">n</span> 種硬幣(係數)湊成 s 的解 +</span><br><span class="line">            只有 <span class="built_in">n</span>-<span class="number">1</span> 種硬幣(係數)湊成 s 的解</span><br></pre></td></tr></table></figure>
 <p>接著考慮<strong>這些解的係數和</strong><br>
-遞迴式如下</p>
-<blockquote>
-<p>待補</p>
-</blockquote>
+遞迴式如下<br>
+令 <strong>g(n,s)</strong> 為該組 <strong>(n,s)</strong> 的正整數解係數和<br>
+n , s 意義同上</p>
+<ul>
+<li><strong>n</strong> 前面n種面額的硬幣</li>
+<li><strong>s</strong> 要湊到的金額</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">g(n,s) =</span><br><span class="line">  <span class="number">0</span> (n&lt;=<span class="number">0</span>)</span><br><span class="line">        沒道理有<span class="number">0</span>或小於<span class="number">0</span>種硬幣(係數)能湊出解</span><br><span class="line">  <span class="number">1</span> * f(n<span class="number">-1</span>, s - <span class="number">1</span>*A[m]) + g(n<span class="number">-1</span>, s - <span class="number">1</span>*A[m]) +</span><br><span class="line">  <span class="number">2</span> * f(n<span class="number">-1</span>, s - <span class="number">2</span>*A[m]) + g(n<span class="number">-1</span>, s - <span class="number">2</span>*A[m]) +</span><br><span class="line">  <span class="number">3</span> * f(n<span class="number">-1</span>, s - <span class="number">3</span>*A[m]) + g(n<span class="number">-1</span>, s - <span class="number">3</span>*A[m]) +</span><br><span class="line">  ...</span><br><span class="line">  k * f(n<span class="number">-1</span>, s - k*A[m]) + g(n<span class="number">-1</span>, s - k*A[m]) +</span><br><span class="line">  ...</span><br><span class="line">        最後一次使用 k 個第 n 種硬幣(係數)湊成 s 的正整數係數和</span><br><span class="line">        = 因改成非負整數解的 <span class="number">1</span> * n * f(n,s) 有多少組解 +</span><br><span class="line">          使用 n<span class="number">-1</span> 種硬幣(係數) 湊成各種 k 組成 s - k*A[m] 的解的係數和</span><br></pre></td></tr></table></figure>
 <h2><span id="top-down-dp-code">Top-down DP code</span></h2>
 <p>這份 DP code 使用 <strong>c++</strong> 完成<br>
 特別感謝GF協助完成</p>
